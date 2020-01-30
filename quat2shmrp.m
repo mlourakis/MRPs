@@ -21,8 +21,6 @@ function m = quat2shmrp(q)
   end
   q=q./sqrt(p); % normalize
 
-  m=q(2:4)./(1 + q(1));
+  m=-q(2:4)./(1 - q(1)); % see eq. (33) in MRP paper
 
-  m=-m./(m'*m); % eq. (33) in MRP paper
-   
 return
