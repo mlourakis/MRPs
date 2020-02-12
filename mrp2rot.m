@@ -16,7 +16,7 @@ function R = mrp2rot(m)
   m=m(:);
   sqmag=m'*m;
   skw=[0 -m(3) m(2); m(3) 0 -m(1); -m(2) m(1) 0]; % [m]_x
-  R=eye(3) + ((4*(1-sqmag)*eye(3) + 8*skw)*skw)/(1+sqmag)^2; % (225b) from Shuster
+  R=eye(3) + ((4*(1-sqmag)*eye(3) + 8*skw)*skw)/(1+sqmag)^2; % (255b) from Shuster
 
   %tmp=(eye(3)+skw)/(eye(3)-skw); % inverse (2.149) in Markley-Crassidis
   %R=tmp*tmp;
